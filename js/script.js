@@ -1,7 +1,31 @@
 let arrRandom = [];
+const squareEl = document.querySelector('section#square');
+alert('Memorizza questi numeri');
 
+setTimeout(beforeTimeOut,1000);
+setTimeout(afterTimeOut,2000);
 arrRandom = generaRandom();
 console.log(arrRandom);
+
+
+function beforeTimeOut(){
+    for(let i=0; i<5; i++){
+        const randomNum = document.createElement('article');
+        let randomNumAdd = document.createTextNode(arrRandom[i]);
+        randomNum.appendChild(randomNumAdd);
+        randomNum.classList.add('randomNum');
+        squareEl.appendChild(randomNum);
+    }
+}
+
+function afterTimeOut(){
+    for(let i=0; i<5; i++){
+        const randomNum = document.getElementsByClassName('randomNum')[i];
+        randomNum.classList.add('hide');
+    }
+}
+
+
 
 function generaRandom(){
     let randomNumberArr = [];
