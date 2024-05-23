@@ -46,13 +46,21 @@ function generaRandom(){
 
 function compareRandom(){
     let userArr = [];
+    let count = 0;
     for(let i=0; i < 5; i++){
         let userNum = Number.parseInt(prompt('Inserire il '+(i+1)+'° numero: '),10);
         userArr.push(userNum);
     }
-    if(userArr[0] === arrRandom[0] && userArr[1] === arrRandom[1] && userArr[2] === arrRandom[2] && userArr[3] === arrRandom[3] && userArr[4] === arrRandom[4]){
-        alert('Hai vinto!');
-    }else{
-        alert('Hai perso!');
+    for(let j=0; j<5; j++){
+        if(userArr[j] === arrRandom[j]){
+            count++;
+            console.log(count);
+        }
     }
+    if(count == 5){
+        alert('hai vinto!');
+    }else{
+        alert('hai perso!');
+    }
+    
 }
